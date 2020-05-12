@@ -69,7 +69,7 @@ extension CustomerListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerCell")!
         
         if let cellViewModel = viewModel?.cellViewModel(at: indexPath) {
-            cell.textLabel?.text = cellViewModel.customer.name
+            cell.textLabel?.text = "\(cellViewModel.customer.name) - \(cellViewModel.customer.id)"
         }
         else {
             cell.textLabel?.text = "No Name"

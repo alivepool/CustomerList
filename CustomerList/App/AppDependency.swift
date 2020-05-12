@@ -9,11 +9,20 @@
 import Foundation
 
 class AppDependency: AllInjectable {
+    
     lazy var customerDataService: CustomerDataServiceable = {
         return CustomerDataService(withFileURL: Constants.customerFileURL)
     }()
     
     lazy var customerRepository: CustomerRepositoryType = {
         return CustomerRepository(self)
+    }()
+    
+    lazy var customerSorter: CustomerSortProvider = {
+       return CustomerSort()
+    }()
+    
+    lazy var customerFilterer: CustomerFilterProvider = {
+        return CustomerFilter()
     }()
 }

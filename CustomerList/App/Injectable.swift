@@ -11,4 +11,6 @@ import Foundation
 typealias AllInjectable =
     CustomerDataServiceinjectable
     & CustomerRepositoryInjectable
+    & CustomerSortInjectable
+    & CustomerFilterInjectable
 

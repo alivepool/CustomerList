@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct IntercomDublin: CoordinateType {
+struct IntercomDublin: CoordinateType{
     
     var latitude: Double {
         return Constants.intercomDublinLatitude
@@ -24,4 +24,5 @@ struct Constants {
     fileprivate static let intercomDublinLongitude = -6.257664
     
     static let customerFileURL = Bundle.main.url(forResource: "customers", withExtension: "txt")!
+    static let filterDistance: Double = 100
 }

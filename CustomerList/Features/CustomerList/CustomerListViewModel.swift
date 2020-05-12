@@ -13,7 +13,6 @@ protocol CustomerListViewModelType {
     var state: CustomerListViewState { get }
     func loadCustomerList()
 
-    func filterButtonClicked()
     func numberOfSections() -> Int
     func numberOfRowsInSection(section: Int) -> Int
     func cellViewModel(at indexPath: IndexPath) -> CustomerCellViewModel?
@@ -29,9 +28,11 @@ enum CustomerListViewState: Equatable {
 
 
 class CustomerListViewModel: CustomerListViewModelType {
-    typealias Dependency = CustomerRepositoryInjectable
+    typealias Dependency = CustomerRepositoryInjectable & CustomerSortInjectable & CustomerFilterInjectable
     
     private let customerRepository: CustomerRepositoryType
+    private let customerSorter: CustomerSortProvider
+    private let customerFilterer: CustomerFilterProvider
     private var customerList: [Customer]?
     private var sortedCustomerList: [Customer]?
     var onStateChange: ((CustomerListViewState) -> Void)?
@@ -43,6 +44,8 @@ class CustomerListViewModel: CustomerListViewModelType {
     
     init(_ dependency: Dependency) {
         customerRepository = dependency.customerRepository
+        customerSorter = dependency.customerSorter
+        customerFilterer = dependency.customerFilterer
     }
     
     func loadCustomerList() {
@@ -60,12 +63,14 @@ class CustomerListViewModel: CustomerListViewModelType {
         }
         else {
             customerList = customers
+            sortedCustomerList = filterAnsSortCustomersForInvite(customers: customers)
             state = .dataLoaded
         }
     }
     
-    func filterButtonClicked() {
-        
+    private func filterAnsSortCustomersForInvite(customers: [Customer]) -> [Customer] {
+        let filteredCustomers = customerFilterer.filterByDistance(customers: customers, fromLocation: IntercomDublin(), lessThan: Constants.filterDistance)
+        return customerSorter.sortByUserId(customers: filteredCustomers)
     }
     
     func numberOfSections() -> Int {
@@ -73,11 +78,11 @@ class CustomerListViewModel: CustomerListViewModelType {
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
-        return customerList?.count ?? 0
+        return sortedCustomerList?.count ?? 0
     }
     
     func cellViewModel(at indexPath: IndexPath) -> CustomerCellViewModel? {
-        guard let customer = customerList?[indexPath.row] else { return nil }
+        guard let customer = sortedCustomerList?[indexPath.row] else { return nil }
         return CustomerCellViewModel(customer: customer)
     }
 }
