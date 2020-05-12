@@ -39,7 +39,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Customers" id="Dva-q8-ZpN"/>
+                    <navigationItem key="navigationItem" title="Customers" id="Dva-q8-ZpN">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.2.fill" catalog="system" id="daw-yJ-1A4">
+                            <connections>
+                                <action selector="showUserFilterOptions:" destination="BYZ-38-t0r" id="32W-hF-oFa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="customerList" destination="fnw-kv-agq" id="tYT-fC-g2t"/>
                     </connections>
@@ -67,4 +73,7 @@
             <point key="canvasLocation" x="343" y="145"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="person.2.fill" catalog="system" width="128" height="80"/>
+    </resources>
 </document>

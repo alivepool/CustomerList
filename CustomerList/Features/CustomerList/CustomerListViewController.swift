@@ -24,6 +24,20 @@ class CustomerListViewController: UIViewController {
         loadData()
     }
     
+    @IBAction func showUserFilterOptions(_ sender: Any) {
+        let alert = UIAlertController(title: "Filter", message: "Please Select an Option", preferredStyle: .actionSheet)
+
+        viewModel?.filterActions().forEach({ action in
+            alert.addAction(UIAlertAction(title: action.title, style: .default, handler: { (_) in
+                action.action()
+            }))
+        })
+
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     private func onStateChange(to state: CustomerListViewState) {
         switch state {
         case .loading:

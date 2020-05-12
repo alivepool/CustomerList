@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias FilterActions = (title: String, action: (()->()))
+
 protocol CustomerListViewModelType {
     var onStateChange: ((CustomerListViewState) -> Void)? { get set }
     var state: CustomerListViewState { get }
@@ -16,6 +18,8 @@ protocol CustomerListViewModelType {
     func numberOfSections() -> Int
     func numberOfRowsInSection(section: Int) -> Int
     func cellViewModel(at indexPath: IndexPath) -> CustomerCellViewModel?
+    
+    func filterActions() -> [FilterActions]
 }
 
 enum CustomerListViewState: Equatable {
@@ -26,6 +30,11 @@ enum CustomerListViewState: Equatable {
     case dataLoaded
 }
 
+enum CustomerDataState {
+    case all
+    case validated
+}
+
 
 class CustomerListViewModel: CustomerListViewModelType {
     typealias Dependency = CustomerRepositoryInjectable & CustomerSortInjectable & CustomerFilterInjectable
@@ -34,13 +43,16 @@ class CustomerListViewModel: CustomerListViewModelType {
     private let customerSorter: CustomerSortProvider
     private let customerFilterer: CustomerFilterProvider
     private var customerList: [Customer]?
-    private var sortedCustomerList: [Customer]?
+    private var validatedCustomerList: [Customer]?
+    private var currentList: [Customer]?
     var onStateChange: ((CustomerListViewState) -> Void)?
     var state = CustomerListViewState.clear {
         didSet {
             onStateChange?(state)
         }
     }
+    
+    private var dataState: CustomerDataState = .validated
     
     init(_ dependency: Dependency) {
         customerRepository = dependency.customerRepository
@@ -62,8 +74,9 @@ class CustomerListViewModel: CustomerListViewModelType {
             state = .empty(message: "No data found")
         }
         else {
-            customerList = customers
-            sortedCustomerList = filterAnsSortCustomersForInvite(customers: customers)
+            customerList = customerSorter.sortByUserId(customers: customers)
+            validatedCustomerList = filterAnsSortCustomersForInvite(customers: customers)
+            updateSelectedList()
             state = .dataLoaded
         }
     }
@@ -73,16 +86,57 @@ class CustomerListViewModel: CustomerListViewModelType {
         return customerSorter.sortByUserId(customers: filteredCustomers)
     }
     
+    private func setDataState(dataState: CustomerDataState) {
+        self.dataState = dataState
+        updateSelectedList()
+        state = .dataLoaded
+    }
+    
+    private func updateSelectedList() {
+        switch dataState {
+        case .all:
+            currentList = customerList
+        case .validated:
+            currentList = validatedCustomerList
+        }
+    }
+    
+}
+
+extension CustomerListViewModel {
+        
     func numberOfSections() -> Int {
         return 1
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
-        return sortedCustomerList?.count ?? 0
+        var list: [Customer]? = nil
+        switch dataState {
+        case .all:
+            list = customerList
+        case .validated:
+            list = validatedCustomerList
+        }
+        return list?.count ?? 0
     }
     
     func cellViewModel(at indexPath: IndexPath) -> CustomerCellViewModel? {
-        guard let customer = sortedCustomerList?[indexPath.row] else { return nil }
+        var list: [Customer]? = nil
+        switch dataState {
+        case .all:
+            list = customerList
+        case .validated:
+            list = validatedCustomerList
+        }
+        guard let customer = list?[indexPath.row] else { return nil }
         return CustomerCellViewModel(customer: customer)
+    }
+    
+    func filterActions() -> [FilterActions] {
+        [(title: "Show all customers", action: { [weak self] in
+            self?.setDataState(dataState: .all)
+        }), (title: "Show validated customers", action: { [weak self] in
+            self?.setDataState(dataState: .validated)
+        })]
     }
 }
