@@ -22,4 +22,6 @@ struct IntercomDublin: CoordinateType {
 struct Constants {
     fileprivate static let intercomDublinLatitude = 53.339428
     fileprivate static let intercomDublinLongitude = -6.257664
+    
+    static let customerFileURL = Bundle.main.url(forResource: "customers", withExtension: "txt")!
 }

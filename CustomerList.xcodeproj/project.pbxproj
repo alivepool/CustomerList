@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DB69EEE246AEDC7001675EE /* CustomerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB69EED246AEDC7001675EE /* CustomerListViewModel.swift */; };
+		9DB69EF0246AF8A4001675EE /* CustomerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB69EEF246AF8A4001675EE /* CustomerCellViewModel.swift */; };
+		9DB69EF2246AFAAF001675EE /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB69EF1246AFAAF001675EE /* Injectable.swift */; };
+		9DB69EF4246AFAD9001675EE /* CustomerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB69EF3246AFAD9001675EE /* CustomerRepository.swift */; };
+		9DB69EF6246AFF3E001675EE /* CustomerDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB69EF5246AFF3E001675EE /* CustomerDataService.swift */; };
+		9DB69EF8246B0231001675EE /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB69EF7246B0231001675EE /* AppDependency.swift */; };
+		9DB69EFA246B0E38001675EE /* AppplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB69EF9246B0E38001675EE /* AppplicationController.swift */; };
+		9DB69EFE246B13F4001675EE /* CustomerSortFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB69EFD246B13F4001675EE /* CustomerSortFilter.swift */; };
 		9DB71ED2246ADE0C00EAF5D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB71ED1246ADE0C00EAF5D7 /* AppDelegate.swift */; };
 		9DB71ED4246ADE0C00EAF5D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB71ED3246ADE0C00EAF5D7 /* SceneDelegate.swift */; };
-		9DB71ED6246ADE0C00EAF5D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB71ED5246ADE0C00EAF5D7 /* ViewController.swift */; };
+		9DB71ED6246ADE0C00EAF5D7 /* CustomerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB71ED5246ADE0C00EAF5D7 /* CustomerListViewController.swift */; };
 		9DB71ED9246ADE0C00EAF5D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB71ED7246ADE0C00EAF5D7 /* Main.storyboard */; };
 		9DB71EDB246ADE0F00EAF5D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB71EDA246ADE0F00EAF5D7 /* Assets.xcassets */; };
 		9DB71EDE246ADE0F00EAF5D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB71EDC246ADE0F00EAF5D7 /* LaunchScreen.storyboard */; };
@@ -31,10 +39,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9DB69EED246AEDC7001675EE /* CustomerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewModel.swift; sourceTree = "<group>"; };
+		9DB69EEF246AF8A4001675EE /* CustomerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCellViewModel.swift; sourceTree = "<group>"; };
+		9DB69EF1246AFAAF001675EE /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
+		9DB69EF3246AFAD9001675EE /* CustomerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRepository.swift; sourceTree = "<group>"; };
+		9DB69EF5246AFF3E001675EE /* CustomerDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDataService.swift; sourceTree = "<group>"; };
+		9DB69EF7246B0231001675EE /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
+		9DB69EF9246B0E38001675EE /* AppplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppplicationController.swift; sourceTree = "<group>"; };
+		9DB69EFD246B13F4001675EE /* CustomerSortFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSortFilter.swift; sourceTree = "<group>"; };
 		9DB71ECE246ADE0C00EAF5D7 /* CustomerList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomerList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB71ED1246ADE0C00EAF5D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB71ED3246ADE0C00EAF5D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9DB71ED5246ADE0C00EAF5D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9DB71ED5246ADE0C00EAF5D7 /* CustomerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewController.swift; sourceTree = "<group>"; };
 		9DB71ED8246ADE0C00EAF5D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9DB71EDA246ADE0F00EAF5D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DB71EDD246ADE0F00EAF5D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +82,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9DB69EEC246AE9A3001675EE /* CustomerList */ = {
+			isa = PBXGroup;
+			children = (
+				9DB71ED5246ADE0C00EAF5D7 /* CustomerListViewController.swift */,
+				9DB71ED7246ADE0C00EAF5D7 /* Main.storyboard */,
+				9DB69EED246AEDC7001675EE /* CustomerListViewModel.swift */,
+				9DB69EEF246AF8A4001675EE /* CustomerCellViewModel.swift */,
+				9DB69EF3246AFAD9001675EE /* CustomerRepository.swift */,
+				9DB69EF5246AFF3E001675EE /* CustomerDataService.swift */,
+				9DB69EFD246B13F4001675EE /* CustomerSortFilter.swift */,
+			);
+			path = CustomerList;
+			sourceTree = "<group>";
+		};
 		9DB71EC5246ADE0C00EAF5D7 = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				9DB71EF8246ADEE200EAF5D7 /* Models */,
-				9DB71EF7246ADED400EAF5D7 /* Views */,
+				9DB71EF7246ADED400EAF5D7 /* Features */,
 				9DB71EF6246ADEC100EAF5D7 /* App */,
 				9DB71EF5246ADE4300EAF5D7 /* Resources */,
 			);
@@ -121,17 +151,19 @@
 				9DB71EDC246ADE0F00EAF5D7 /* LaunchScreen.storyboard */,
 				9DB71ED3246ADE0C00EAF5D7 /* SceneDelegate.swift */,
 				9DB71EFB246ADF2600EAF5D7 /* Environment.swift */,
+				9DB69EF1246AFAAF001675EE /* Injectable.swift */,
+				9DB69EF7246B0231001675EE /* AppDependency.swift */,
+				9DB69EF9246B0E38001675EE /* AppplicationController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
 		};
-		9DB71EF7246ADED400EAF5D7 /* Views */ = {
+		9DB71EF7246ADED400EAF5D7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				9DB71ED5246ADE0C00EAF5D7 /* ViewController.swift */,
-				9DB71ED7246ADE0C00EAF5D7 /* Main.storyboard */,
+				9DB69EEC246AE9A3001675EE /* CustomerList */,
 			);
-			path = Views;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		9DB71EF8246ADEE200EAF5D7 /* Models */ = {
@@ -245,11 +277,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB71ED6246ADE0C00EAF5D7 /* ViewController.swift in Sources */,
+				9DB69EFA246B0E38001675EE /* AppplicationController.swift in Sources */,
+				9DB69EEE246AEDC7001675EE /* CustomerListViewModel.swift in Sources */,
+				9DB69EF4246AFAD9001675EE /* CustomerRepository.swift in Sources */,
+				9DB71ED6246ADE0C00EAF5D7 /* CustomerListViewController.swift in Sources */,
 				9DB71ED2246ADE0C00EAF5D7 /* AppDelegate.swift in Sources */,
+				9DB69EFE246B13F4001675EE /* CustomerSortFilter.swift in Sources */,
+				9DB69EF8246B0231001675EE /* AppDependency.swift in Sources */,
 				9DB71ED4246ADE0C00EAF5D7 /* SceneDelegate.swift in Sources */,
+				9DB69EF0246AF8A4001675EE /* CustomerCellViewModel.swift in Sources */,
 				9DB71EFA246ADEF500EAF5D7 /* Customer.swift in Sources */,
 				9DB71EFE246ADFD800EAF5D7 /* Coordinate.swift in Sources */,
+				9DB69EF6246AFF3E001675EE /* CustomerDataService.swift in Sources */,
+				9DB69EF2246AFAAF001675EE /* Injectable.swift in Sources */,
 				9DB71EFC246ADF2600EAF5D7 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
