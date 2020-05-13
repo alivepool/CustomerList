@@ -11,9 +11,18 @@ import Foundation
 protocol CoordinateType {
     var latitude: Double { get }
     var longitude: Double { get }
+    
+    func isValidCoordinate() -> Bool
+}
+
+extension CoordinateType {
+    func isValidCoordinate() -> Bool {
+        return validateCoordinate(coordinate: self)
+    }
 }
 
 struct Coordinate: CoordinateType {
+    
     var latitude: Double
     var longitude: Double
 }

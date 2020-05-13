@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Sorting
 protocol CustomerSortInjectable { var customerSorter: CustomerSortProvider { get } }
 protocol CustomerSortProvider {
     func sortByUserId(customers: [Customer]) -> [Customer]
@@ -22,6 +23,8 @@ class CustomerSort: CustomerSortProvider {
     
 }
 
+
+// Filtering
 protocol CustomerFilterInjectable { var customerFilterer: CustomerFilterProvider { get } }
 protocol CustomerFilterProvider {
     func filterByDistance(customers: [Customer], fromLocation: CoordinateType, lessThan maxDistance: Double) -> [Customer]
@@ -30,7 +33,7 @@ protocol CustomerFilterProvider {
 class CustomerFilter: CustomerFilterProvider {
     func filterByDistance(customers: [Customer], fromLocation location: CoordinateType, lessThan maxDistance: Double) -> [Customer] {
         return customers.compactMap { customer -> Customer? in
-            guard validateCoordinate(coordinate: customer) && validateCoordinate(coordinate: location) else { return nil }
+            guard customer.isValidCoordinate() && location.isValidCoordinate() else { return nil }
             let distance = haversine(lat1: location.latitude, lon1: location.longitude, lat2: customer.latitude, lon2: customer.longitude)
             if  distance < maxDistance {
                 return customer
