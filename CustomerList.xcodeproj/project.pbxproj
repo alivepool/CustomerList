@@ -16,6 +16,10 @@
 		9DB69EFA246B0E38001675EE /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB69EF9246B0E38001675EE /* ApplicationController.swift */; };
 		9DB69EFE246B13F4001675EE /* CustomerSortFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB69EFD246B13F4001675EE /* CustomerSortFilter.swift */; };
 		9DB69F00246B15C9001675EE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB69EFF246B15C9001675EE /* Utilities.swift */; };
+		9DB69F0B246BD305001675EE /* invalid_customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DB69F09246BD305001675EE /* invalid_customers.txt */; };
+		9DB69F0C246BD305001675EE /* customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DB69F0A246BD305001675EE /* customers.txt */; };
+		9DB69F0E246BD493001675EE /* filter_customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DB69F0D246BD493001675EE /* filter_customers.txt */; };
+		9DB69F10246BD745001675EE /* filter_invalid_coordinate_customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DB69F0F246BD745001675EE /* filter_invalid_coordinate_customers.txt */; };
 		9DB71ED2246ADE0C00EAF5D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB71ED1246ADE0C00EAF5D7 /* AppDelegate.swift */; };
 		9DB71ED4246ADE0C00EAF5D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB71ED3246ADE0C00EAF5D7 /* SceneDelegate.swift */; };
 		9DB71ED6246ADE0C00EAF5D7 /* CustomerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB71ED5246ADE0C00EAF5D7 /* CustomerListViewController.swift */; };
@@ -49,6 +53,10 @@
 		9DB69EF9246B0E38001675EE /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		9DB69EFD246B13F4001675EE /* CustomerSortFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSortFilter.swift; sourceTree = "<group>"; };
 		9DB69EFF246B15C9001675EE /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		9DB69F09246BD305001675EE /* invalid_customers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invalid_customers.txt; sourceTree = "<group>"; };
+		9DB69F0A246BD305001675EE /* customers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = customers.txt; sourceTree = "<group>"; };
+		9DB69F0D246BD493001675EE /* filter_customers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = filter_customers.txt; sourceTree = "<group>"; };
+		9DB69F0F246BD745001675EE /* filter_invalid_coordinate_customers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = filter_invalid_coordinate_customers.txt; sourceTree = "<group>"; };
 		9DB71ECE246ADE0C00EAF5D7 /* CustomerList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomerList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB71ED1246ADE0C00EAF5D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB71ED3246ADE0C00EAF5D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				9DB71EE8246ADE0F00EAF5D7 /* CustomerListTests.swift */,
+				9DB69F0A246BD305001675EE /* customers.txt */,
+				9DB69F09246BD305001675EE /* invalid_customers.txt */,
+				9DB69F0D246BD493001675EE /* filter_customers.txt */,
+				9DB69F0F246BD745001675EE /* filter_invalid_coordinate_customers.txt */,
 				9DB71EEA246ADE0F00EAF5D7 /* Info.plist */,
 			);
 			path = CustomerListTests;
@@ -270,6 +282,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DB69F10246BD745001675EE /* filter_invalid_coordinate_customers.txt in Resources */,
+				9DB69F0E246BD493001675EE /* filter_customers.txt in Resources */,
+				9DB69F0C246BD305001675EE /* customers.txt in Resources */,
+				9DB69F0B246BD305001675EE /* invalid_customers.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

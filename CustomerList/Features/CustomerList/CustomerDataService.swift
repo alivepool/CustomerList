@@ -24,22 +24,31 @@ class CustomerDataService: CustomerDataServiceable {
     
     func fetchData(_ completion: @escaping (([Customer]) -> ())) {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            self?.fetchAndParse(completionHandler:completion)
+            if let fileURL = self?.fileURL {
+                self?.fetchAndParse(url: fileURL ,completionHandler:completion)
+            }
         }
     }
     
-    private func fetchAndParse(completionHandler: (([Customer]) -> ())) {
+    private func fetchAndParse(url: URL,completionHandler: (([Customer]) -> ())) {
         var customerArr: [Customer] = []
-        let text = try? String(contentsOf: fileURL, encoding: .utf8)
+        let text = try? String(contentsOf: url, encoding: .utf8)
         if let arr = text?.components(separatedBy: "\n") {
-            arr.forEach { str in
-                let data = Data(str.utf8)
-                if let customer: Customer = try? JSONDecoder().decode(Customer.self, from: data) {
-                    customerArr.append(customer)
-                }
-            }
+            customerArr = parse(jsonArr: arr)
         }
         completionHandler(customerArr)
+    }
+    
+    private func parse(jsonArr: [String]) -> [Customer]  {
+        let customers = jsonArr.compactMap { str -> Customer? in
+            let data = Data(str.utf8)
+            if let customer: Customer = try? JSONDecoder().decode(Customer.self, from: data) {
+                return customer
+            }
+            return nil
+        }
+        
+        return customers
     }
 }
 
