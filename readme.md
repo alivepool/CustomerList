@@ -27,7 +27,7 @@ A sample app to parse and filter customer list from a text file. the text file i
 ## Screenshots
 
 ### Filtered list of customers
-<img src="Images/list_type.png" width="200">
+<img src="Images/filtered_customers.png" width="200">
 
 ### Filtering options
-<img src="Images/collection_view.png" width="200">
+<img src="Images/filter_options.png" width="200">
