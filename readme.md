@@ -1,5 +1,5 @@
 # CustomerList
-A sample app to parse and filter customer list from a text file. the text file is a newline separated collection of json. The app parses the text file and shows the customers within a distance of 100 km from Intercom Dublin coordinates 53.339428, -6.257664.
+A sample app to parse and filter customer list from a text file. The text file is a newline separated collection of json. The app parses the text file and shows the customers with their names and ids within a distance of 100 km from Intercom Dublin coordinates 53.339428, -6.257664.
 
 ## Requirements ans Setup
 
